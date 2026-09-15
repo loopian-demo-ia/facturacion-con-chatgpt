@@ -817,9 +817,11 @@ def main():
         )
         v = por_uid[uid]
 
-    revisar, preparar, mensual = st.tabs([
-        "Revisar ventas", "Preparar", "Resumen mensual"
-    ])
+    revisar, preparar, mensual = st.tabs(
+        ["Revisar ventas", "Preparar", "Resumen mensual"],
+        key="pestana_activa",
+        on_change="rerun",
+    )
 
     with revisar:
         if not ventas:
